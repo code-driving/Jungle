@@ -54,7 +54,8 @@
   <% else %>
   
     <div class="alert alert-warning" role="alert">
-      <strong>Your cart is empty!</strong> Please click <a href="/">here</a> to add products!
+      <strong>Your cart is empty!</strong> 
+      <%= link_to "Continue Shopping", root_path, class: 'btn btn-primary' %>
     </div>
     
   <% end %>
