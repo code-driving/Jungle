@@ -12,12 +12,20 @@ Rails.application.routes.draw do
   end
 
   resources :orders, only: [:create, :show]
-
+  
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  get '/logout' => 'sessions#destroy'
+  
+  get '/signup' => 'users#new'
+  post '/users' => 'users#create'
+  
   namespace :admin do
     root to: 'dashboard#show'
     resources :products, except: [:edit, :update, :show]
     resources :categories, only: [:index, :create, :new]
   end
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
