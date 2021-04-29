@@ -1,19 +1,27 @@
 <h1>Admin Dashboard</h1>
-
+  <br>
   <div class="panel panel-default products">
 
     <table class="table table-bordered">
       <thead>
         <tr>
-          <th>NUMBER OF PRODUCTS</th>
-          <th>NUMBER OF CATEGORIES</th>
+          <th>PRODUCTS</th>
+          <th>CATEGORIES</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <th><a href="/admin/products" class='btn btn-lg btn-primary'><%= @products %></a></th> 
-          <th><a href="/admin/categories" class='btn btn-lg btn-primary'><%= @categories %></a></th>
-        <tr>
+          <td>
+            <p class="count"><%= @products %></p>
+            <br>
+            <%= link_to 'CHECK PRODUCTS',  [:admin, :products], class: 'btn btn-sm btn-primary' %>
+          </td>
+          <td>
+            <p class="count"><%= @categories %></p>
+            <br>
+            <%= link_to 'CHECK CATEGORIES', [:admin, :root], class: 'btn btn-sm btn-primary' %>
+          </td>
+        </tr>
       </tbody>
     </table>
   </div>
