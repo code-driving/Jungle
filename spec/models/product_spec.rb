@@ -54,6 +54,7 @@ RSpec.describe Product, type: :model do
 
       expect(@product).to_not be_valid
       expect(@product.errors.full_messages[0]).to eql("Price cents is not a number")
+      expect(@product.errors.full_messages.length).to eql(3)
     end 
 
     it 'ensures the presence of quantity' do
@@ -72,6 +73,7 @@ RSpec.describe Product, type: :model do
 
       expect(@product).to_not be_valid
       expect(@product.errors.full_messages[0]).to eql("Quantity can't be blank")
+      expect(@product.errors.full_messages.length).to eql(1)
     end 
 
     it 'should have a category' do
@@ -84,6 +86,7 @@ RSpec.describe Product, type: :model do
       @product.save
       expect(@product.category).to be_nil
       expect(@product.errors.full_messages[0]).to eql("Category can't be blank")
+      expect(@product.errors.full_messages.length).to eql(1)
     end 
   end
 end
