@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   def new
+    # @user = User.new
   end
 
   def create
@@ -14,13 +15,13 @@ class UsersController < ApplicationController
   end
   
   # def create
-  #   user = User.new(user_params)
+  #   @user = User.new(user_params)
 
-  #   if user.save
-  #     session[:user_id] = user.id
-  #     redirect_to '/', notice: 'Account created successfully'
+  #   if @user.save
+  #     session[:user_id] = @user.id
+  #     redirect_to '/', notice: 'Account was created successfully'
   #   else
-  #     flash[:error] = 'An error occured!'
+  #     flash[:error] = 'Error!'
   #     render 'new'
   #   end
   # end

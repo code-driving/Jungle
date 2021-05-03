@@ -24,7 +24,6 @@ Rails.application.routes.draw do
     root to: 'dashboard#show'
     resources :products, except: [:edit, :update, :show]
     resources :categories, only: [:index, :create, :new]
-    resources :sales, only: [:index, :new]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
