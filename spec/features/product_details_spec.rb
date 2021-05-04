@@ -17,16 +17,10 @@ RSpec.feature "ProductDetails", type: :feature, js: true do
       end
     end
 
-    scenario "TVisit all products, then visit a specific product" do
+    scenario "Visit all products, then visit a specific product" do
       visit root_path
-  
-      # commented out b/c it's for debugging only
-  
       page.find('.product', match: :first).find('header').click_link
       sleep 1
-      save_and_open_screenshot
-      
       expect(page).to have_css '.products-show'
     end
-
 end
