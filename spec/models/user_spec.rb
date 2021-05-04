@@ -29,14 +29,6 @@ RSpec.describe User, type: :model do
       expect(@user.errors.full_messages[2]).to eql("Password is too short (minimum is 4 characters)")
       expect(@user.errors.full_messages.length).to eql(3)
     end
-
-    # it "ensures password_confirmatioon is not an empty field" do
-    #   @user = User.create(name: "John", email: "mark@gmail.com", password: nil, password_confirmation: nil)
-
-    #   expect(@user).to_not be_valid
-    #   expect(@user.errors.full_messages[0]).to eql("Password can't be blank")
-    #   expect(@user.errors.full_messages.length).to eql(1)
-    # end
     
     it "ensures the password and password_confirmation match" do
       @user = User.create(name: "John", email: "mark@gmail.com", password: "test", password_confirmation: "test1")
@@ -58,16 +50,17 @@ RSpec.describe User, type: :model do
       expect(@user1).to be_valid
     end
   end
+  
   describe '.authenticate_with_credentials' do
-    # examples for this class method here
-    it "is valid if email and password the user types in correct" do
+  
+    it "is valid if email and password the user types in are correct and match" do
       @user = User.create(name: "John", email: "mark@gmail.com", password: "test",  password_confirmation: "test")
       @authenticated = User.authenticate_with_credentials("mark@gmail.com ", "test")
       
       expect(@authenticated).to eql(@user)
     end
     
-    it "is valid if email is correct in different cases, with whitespaces" do
+    it "is valid if email is correct if typed in different cases or with whitespaces" do
       @user = User.create(name: "John", email: "mark@gmail.com", password: "test",  password_confirmation: "test")
       @authenticated = User.authenticate_with_credentials(" mArK@gmail.com ", "test")
       
