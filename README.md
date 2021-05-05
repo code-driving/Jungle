@@ -3,8 +3,9 @@
 A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
 
 ## Final Product
-![""]()
-![""]()
+!["Admin Products page"](https://github.com/code-driving/Jungle/blob/master/docs/admin.png?raw=true)
+!["Admin Dashboard"](https://github.com/code-driving/Jungle/blob/master/docs/dashboard.png?raw=true)
+!["Products page"](https://github.com/code-driving/Jungle/blob/master/docs/products.png?raw=true)
 
 
 ## Additional Steps for Apple M1 Machines
@@ -36,3 +37,4 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 * Rails 4.2 [Rails Guide](http://guides.rubyonrails.org/v4.2/)
 * PostgreSQL 9.x
 * Stripe
+* Capybara
